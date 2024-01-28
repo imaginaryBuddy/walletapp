@@ -1,7 +1,7 @@
 :root {
     --primary: #1D5D9B;
     --secondary: #F4D160;
-
+    --tertiary: #40A2D8;
 }
 .bg-primary{
     background-color: var(--primary) !important;
@@ -9,6 +9,10 @@
 
 .bg-secondary{
     background-color: var(--secondary) !important;
+}
+
+.bg-tertiary{
+    background-color: var(--tertiary) !important;
 }
 
 .text-primary{
@@ -25,4 +29,14 @@
 
 .text-black{
     color: #000000 !important;
+}
+
+.success-bg{
+    color: white;
+    background-color: #AAD9BB; 
+}
+
+.failure-bg{
+    color: white;
+    background-color: #BF3131; 
 }

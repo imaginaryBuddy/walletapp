@@ -8,3 +8,36 @@ input:focus, select:focus, textarea:focus{
     border: 1px solid rgb(34, 34, 34);
     outline: none;
 }
+
+.primary-contained-btn{
+    background-color: var(--primary);
+    color: white;
+    padding: 8px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.primary-outlined-btn{
+    background-color: white;
+    color: var(--primary);
+    padding: 8px 20px;
+    text-transform: uppercase;
+    border: 1px solid var(--primary);
+    cursor: pointer;
+}
+
+.primary-contained-btn:hover{
+    background-color: lightblue;
+}
+
+.primary-outlined-btn:hover{
+    background-color: lightblue;
+}
+
+.btn-success{
+    background-color: lightgreen; 
+}
+
+.btn-failure{
+    background-color: orange; 
+}

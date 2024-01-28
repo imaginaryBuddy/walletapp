@@ -1,12 +1,17 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 app.use(express.json());
-const dbConfig = require('./config/dbConfig');
-const usersRoute = require('./routes/usersRoute');
-const PORT = process.env.PORT ||3800;
+const dbConfig = require("./config/dbConfig");
+const usersRoute = require("./routes/usersRoute");
+const transactionsRoute = require("./routes/transactionRoute");
+const requestsRoute = require("./routes/requestsRoute");
 
-app.use('/api/users', usersRoute);
+const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () =>{
-    console.log(`Server started on port ${PORT}`);
+app.use("/api/users", usersRoute);
+app.use("/api/transactions", transactionsRoute);
+app.use("/api/requests", requestsRoute);
+
+app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`);
 });

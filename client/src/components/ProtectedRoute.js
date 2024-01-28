@@ -5,9 +5,10 @@ import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {SetUser, ReloadUser} from "../redux/usersSlice";
 import {ShowLoading, HideLoading} from "../redux/loadersSlice";
+import DefaultLayout from './DefaultLayout';
 
 export default function ProtectedRoute(props){
-    const {user} = useSelector(state=> state.users)
+    const {user, reloadUser} = useSelector(state=> state.users)
     const dispatch = useDispatch();
     // const [userData, setUserData] = React.useState(null)
 
@@ -28,7 +29,6 @@ export default function ProtectedRoute(props){
         }catch(error){
             dispatch(HideLoading());
             navigate('/login');
-            console.log('ProtectedRoute.js error')
             message.error(error.message);
         }
     };
@@ -43,6 +43,13 @@ export default function ProtectedRoute(props){
         }
 
     }, []);
+
+    React.useEffect(() => {
+        if(reloadUser){
+            getData();
+        }
+    })
     // return <div>{props.children}</div>
-    return user && (<div>{props.children}</div>)
+    return user && (<div><DefaultLayout>{props.children}</DefaultLayout></div>)
 }
+
